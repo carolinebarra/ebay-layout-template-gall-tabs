@@ -1,0 +1,411 @@
+
+<style>
+	/* general styles */
+	.clearfix:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	* {
+		font-family: Arial, sans-serif;
+	}
+	a { color: #000; }
+	a:link,
+	a:active {
+		text-decoration: none !important;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+
+	/* layout styles */
+	.ebay-wrap {
+		background-color: #fff;
+		width: 895px;
+		color: #333;
+		margin: 0 auto;
+		padding: 0;
+
+		/*outline: 2px dotted orange;*/
+	}
+	#ebay-mainnav {
+		height: 159px;
+	}
+	#ebay-mainnav .logo {
+		float: left;
+	}
+	#ebay-mainnav .logo img { /* placeholder */
+		width: 284px;
+		height: 120px;
+		outline: 2px dotted orange;
+	}
+	#ebay-mainnav .links {
+		float: left;
+		width: 611px;
+	}
+	#ebay-mainnav .links .top {
+		background-color: #1d95d8; /* lt.blue */
+		text-align: right;;
+		padding: .48em 1em
+	}
+	#ebay-mainnav .links .top p {
+		color: #fff;
+		margin: 0;
+	}
+	#ebay-mainnav .links .top p {
+		font-size: .9em;	
+		line-height: 1.25em;	
+	}
+	#ebay-mainnav .links .top p:last-child {
+		font-size: .6em;
+	}
+	#ebay-mainnav .links .subnav1 {
+		background-color: #333;
+		padding: .2em .9em .3em 0;
+	}
+	#ebay-mainnav .links .subnav1 ul {
+		list-style: none;
+		float: right;
+		margin: 0;
+	}
+	#ebay-mainnav .links .subnav1 ul li {
+		display: inline-block;
+    	margin-left: 1em;
+	}
+	#ebay-mainnav .links .subnav1 ul li a {
+		color: #fff;
+		font-size: .7em;
+	}
+	#ebay-mainnav .links .subnav2 .item {
+		float: left;
+		width: 152px;
+		height: 66px;
+		padding-top: .8em;
+	}
+	#ebay-mainnav .links .subnav2 .item p,
+	#ebay-mainnav .links .subnav2 .item h4 {
+		margin: 0;
+	}
+	#ebay-mainnav .links .subnav2 .item h4 {
+		font-size: .65em;
+		font-weight: bold;
+	}
+	#ebay-mainnav .links .subnav2 .item p {
+		font-size: .55em;
+	}
+	#ebay-content {
+		clear: both;
+		margin-bottom: 2em;
+	}
+	#ebay-content aside {
+		float: left;
+		width: 283px;
+		margin-bottom: 2em;
+	}
+	#ebay-content aside ul {
+		list-style: none;
+		margin-top: 0;
+	}
+	#ebay-content aside h4 {
+		font-size: .8em;
+		font-weight: bold;
+		margin-top: 0;
+	}		
+	#ebay-content aside .links h4 {
+		margin: 0 0 .45em 3.25em;
+	}
+	#ebay-content aside .links h4 a:link,
+	#ebay-content aside .links h4 a:active,
+	#ebay-content aside .links h4 a:hover,
+	#ebay-content aside .links h4 a:visited {
+		color: #000;
+	}	
+	#ebay-content aside .links ul {
+		margin: .25em 0 1.1em .5em;
+	}
+	#ebay-content aside .links ul li {
+		text-align: left;
+		margin-bottom: .3em;
+	}
+	#ebay-content aside .links ul li a {
+		color: #333;
+		font-size: .7em;
+	}
+	#ebay-content aside .pay-options,
+	#ebay-content aside .distributors {
+		width: 67%;
+		margin: 0 auto;
+		border-top: 1px solid #999;
+	}		
+	#ebay-content aside .pay-options img {
+		display: block;
+		margin: 0 auto;
+		padding: .5em 0;
+	}
+	#ebay-content aside .distributors {
+		margin-bottom: 1.25em;
+	}			
+	#ebay-content aside .distributors h4 {
+		text-align: center;
+		padding: 1.25em 0;
+	}		
+	#ebay-content aside .distributors h4 {
+		margin-bottom: 0;
+	}
+	#ebay-content aside .distributors img {
+		display: block;
+		margin: 0 auto;
+		/* placeholder below */
+		width: 150px;
+		height: 271px;
+		outline: 2px dotted orange;
+	}
+	#ebay-content .product {
+		float: left;
+	}
+	#ebay-content .product h2 {
+		margin: 0 0 1em 0;
+	}
+	#ebay-content .product .ebay-gallery {
+		margin-bottom: 20px;
+	}
+
+	/* EBAY GALL */
+	.ebay-gallery {
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+	}
+	.ebay-gallery #navigation {
+		float: left;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.ebay-gallery #navigation li {
+		float: left;
+		clear: both; /* ?!? */
+		width: 65px;
+		height: 6	5px;
+		padding: 0;
+		margin: 0 0 20px 0;
+		overflow: hidden;
+	}
+	.ebay-gallery #navigation li:last-child {
+		margin-bottom: 0;
+	}
+	.ebay-gallery #navigation li a img {
+		width: 100%;
+		height: auto;
+		border: none;
+	}
+	.ebay-gallery #full-picture {
+		float: left;
+		width: 415px;
+		height: 415px;
+		margin-right: 20px;
+		overflow: hidden;
+	}
+	.ebay-gallery #full-picture img {
+		width: 100%;
+		height: auto;
+	}
+	#ebay-footer {
+		margin-bottom: 2em;
+	}
+	#ebay-footer small {
+		display: block;
+		width: 92%;
+		font-size: .55em;
+		margin: 0 auto;
+		padding-top: .25em;
+		border-top: 1px solid #333;
+	}
+
+	/* EBAY TABS */
+	.ebay-tabs {
+		position: relative;
+	}		
+	.ebay-tabs main {
+		width: 560px;
+		height: 190px;
+	}
+	.ebay-tabs .cosmetic {
+		position: absolute;
+		top: 21px;
+		right: 0px;
+	}
+	.ebay-tabs .cosmetic img {
+		width: 425px;
+	}
+	.ebay-tabs section {
+		display: none;
+		padding: 1em;
+	}
+	.ebay-tabs section p,
+	.ebay-tabs section ul li {
+		font-size: .75em;
+		margin: 0;
+	}
+	.ebay-tabs input {
+		display: none;
+	}
+	.ebay-tabs label {
+		display: inline-block;
+		background-color: #BDC3C7; /* lt.grey */
+		width: 127px;
+		color: #333;
+		font-size: .65em;
+		font-weight: bold;
+		margin-bottom: .5em;
+		padding: .75em 0 .75em .75em;
+	}
+	.ebay-tabs label:hover {
+		cursor: pointer;
+	}
+	.ebay-tabs input:checked + label {
+		background-color: #1d95d8; /* dk.grey #6C7A89 */
+		color: #fff;
+	}
+	.ebay-tabs #tab1:checked ~ #content1,
+	.ebay-tabs #tab2:checked ~ #content2,
+	.ebay-tabs #tab3:checked ~ #content3,
+	.ebay-tabs #tab4:checked ~ #content4 {
+		display: block;
+		width: 93%;
+		background-color: #eee;
+	}
+</style>
+
+</head>
+<body>
+<div class="ebay-wrap">
+	<section id="ebay-mainnav" class="clearfix">
+		<div class="logo">
+			<a href="#" alt="company name"><img src="http://zornfett.com/temp/spacer.gif" /></a>
+		</div>
+		<div class="links">
+			<div class="top">
+				<p>TKTKTKT <strong>TKTKTKT</strong></p>
+				<p>TKTKTKT</p>
+			</div>
+			<div class="subnav1 clearfix">
+				<ul>
+					<li><a href="#"><strong>TKTKTKT</strong></a></li>
+					<li><a href="#">TKTKTKT</a></li>
+					<li><a href="#">TKTKTKT</a></li>
+				</ul>
+			</div>
+			<div class="subnav2 clearfix">
+				<div class="item">
+					<h4>TKTKTKT</h4>
+					<p>TKTKTKT</p>
+				</div>
+				<div class="item">
+					<h4>TKTKTKT</h4>
+					<p>TKTKTKT</p>
+				</div>
+				<div class="item">
+					<h4>TKTKTKT</h4>
+					<p>TKTKTKT<br />TKTKTKT</p>
+				</div>
+				<div class="item">
+					<h4>TKTKTKT</h4>
+					<p>TKTKTKT</p>
+				</div>			
+			</div>		
+		</div>
+	</section>
+	<section id="ebay-content" class="clearfix">
+		<aside>
+			<div class="links">
+				<h4>
+					<a href="#">TKTKTKT</a>
+				</h4>
+				<ul>
+					<li>
+						<a href="#">TKTKTKT</a>
+					</li>
+					<li>
+						<a href="#">TKTKTKT</a>
+					</li>
+					<li>
+						<a href="#">TKTKTKT</a>
+					</li>
+					<li>
+						<a href="#">TKTKTKT</a>
+					</li>
+					<li>
+						<a href="#">TKTKTKT</a>
+					</li>
+					<li>
+						<a href="#">TKTKTKT</a>
+					</li>				
+				</ul>				
+			</div>
+			<div class="distributors">
+				<h4>TKTKTKT</h4>
+				<a href="#"><img src="http://zornfett.com/temp/spacer.gif" alt=""></a>
+			</div>
+			<div class="pay-options">
+				<a href="#"><img src="http://zornfett.com/temp/spacer.gif" alt=""></a>		
+			</div>
+		</aside>
+		<div class="product">
+			<h2>TITLE</h2>
+			<div class="ebay-gallery clearfix">
+				<div id="full-picture">
+					<div><a name="pic1"></a><img alt="1" src="http://weknowyourdreams.com/images/kittens/kittens-07.jpg" /></div>
+					<div><a name="pic2"></a><img alt="2" src="http://www.warrenphotographic.co.uk/photography/bigs/08482-Fluffy-ginger-female-kitten.jpg" /></div>
+					<div><a name="pic3"></a><img alt="3" src="http://static.boredpanda.com/blog/wp-content/uploads/2016/08/cute-kittens-30-57b30ad41bc90__605.jpg" /></div>
+					<div><a name="pic4"></a><img alt="4" src="https://vetstreet-brightspot.s3.amazonaws.com/4b/07/a359209d48cf857314232c414d94/kitten-iStock_000027931598-335lc022714.jpg" /></div>
+				</div>
+				<ul id="navigation">
+					<li>
+						<a href="#pic1"><img alt="1" src="http://weknowyourdreams.com/images/kittens/kittens-07.jpg" /></a>
+					</li>
+					<li>
+						<a href="#pic2"><img alt="2" src="http://www.warrenphotographic.co.uk/photography/bigs/08482-Fluffy-ginger-female-kitten.jpg" /></a>
+					</li>
+					<li>
+						<a href="#pic3"><img alt="3" src="http://static.boredpanda.com/blog/wp-content/uploads/2016/08/cute-kittens-30-57b30ad41bc90__605.jpg" /></a>
+					</li>
+					<li>
+						<a href="#pic4"><img alt="4" src="https://vetstreet-brightspot.s3.amazonaws.com/4b/07/a359209d48cf857314232c414d94/kitten-iStock_000027931598-335lc022714.jpg" /></a>
+					</li>
+				</ul>	
+			</div>
+			<div class="ebay-tabs">
+				<main>
+					<input id="tab1" type="radio" name="tabs" checked>
+					<label class="tab1" for="tab1">ONE</label>
+					<input id="tab2" type="radio" name="tabs">
+					<label class="tab2" for="tab2">TWO</label>
+					<input id="tab3" type="radio" name="tabs">
+					<label class="tab3" for="tab3">THREE</label>
+					<input id="tab4" type="radio" name="tabs">
+					<label class="tab4" for="tab4">FOUR</label>
+					<section id="content1">
+						<p>ONE Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</section>
+					<section id="content2">
+						<p>TWO Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</section>
+					<section id="content3">
+						<ul>
+							<li>THREE Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+							<li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+						</ul>
+					</section>
+					<section id="content4">
+						<p>FOUR Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</section>
+				</main>
+			</div>
+		</div>
+	</section>
+	<section id="ebay-footer">
+		<small>TKTKTKT</small>
+	</section>
+</div>
+
